@@ -5,11 +5,13 @@ import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 
+import javax.swing.text.html.ImageView;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Hashtable;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable{
@@ -56,5 +58,15 @@ public class Controller implements Initializable{
         homePage.setVisible(true);
         textInput.setVisible(false);
         MIDIFileUpload.setVisible(false);
+
+        // Note types
+        String[] noteTypes = {"e2", "f2", "g2", "a2", "b2", "c3", "d3", "e3", "f3", "g3", "a3", "b3", "c4", "d4", "e4", "f4", "g4", "a4", "b4", "c5", "d5", "e5", "f5", "g5"};
+        String[] noteLengths = {"quarter", "half", "whole"};
+
+        // Create dictionary of notes with string keys
+        Hashtable<String, ImageView> noteSheet = new Hashtable<String, ImageView>();
+
+
+
     }
 }
