@@ -1314,7 +1314,7 @@
                </image>
             </ImageView>
             <Pane prefHeight="2.0" prefWidth="10.0" />
-            <ImageView fx:id="p3_e42_whole" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="p3_e4_whole" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/notes/egg-whole.png" />
                </image>
@@ -1350,7 +1350,7 @@
                </image>
             </ImageView>
             <Pane prefHeight="1.0" prefWidth="10.0" />
-            <ImageView fx:id="p3_g22_whole" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="p3_g2_whole" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/notes/goose-whole.png" />
                </image>
@@ -1758,7 +1758,7 @@
                </image>
             </ImageView>
             <Pane prefHeight="2.0" prefWidth="32.0" />
-            <ImageView fx:id="p4_g43_whole" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="p4_g4_whole" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/notes/goose-whole.png" />
                </image>
@@ -7095,7 +7095,7 @@
                </image>
             </ImageView>
             <Pane prefHeight="2.0" prefWidth="10.0" />
-            <ImageView fx:id="p16_d43_whole" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="p16_d4_whole" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/notes/dog-whole.png" />
                </image>
