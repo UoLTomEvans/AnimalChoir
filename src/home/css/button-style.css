@@ -10,9 +10,3 @@
 {
     -fx-background-color: #886295;
 }
-.button:focused
-{
-    -fx-background-color: #511566;
-    -fx-border-color: #CDD1D6;
-    -fx-border-width: 0px 0px 0px 3px;
-}
