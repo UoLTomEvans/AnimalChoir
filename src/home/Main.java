@@ -12,13 +12,10 @@ import java.util.Objects;
 
 public class Main extends Application {
 
-    double x = 0;
-    double y = 0;
     @Override
     public void start(Stage stage) throws Exception{
 
-        Image icon = new Image("home/icons/icon.png");
-
+        Image icon = new Image("/icon.png");
         URL url = getClass().getClassLoader().getResource("home/fxml/Main.fxml");
         Parent root = FXMLLoader.load(Objects.requireNonNull(url));
         Scene sc = new Scene(root);

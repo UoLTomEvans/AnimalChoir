@@ -1,19 +1,25 @@
 package home.controllers;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -21,6 +27,9 @@ import java.util.regex.Pattern;
 
 
 public class Controller implements Initializable{
+
+    @FXML
+    private AnchorPane fullWindow;
 
     @FXML
     private AnchorPane homePage;
@@ -35,7 +44,25 @@ public class Controller implements Initializable{
     private TextField txtFieldNotes;
 
     @FXML
+    private TextField txtFieldTitle;
+
+    @FXML
+    private TextField txtFieldArtist;
+
+    @FXML
     private Text errorText;
+
+    @FXML
+    private Text txtTitle;
+
+    @FXML
+    private Text txtArtist;
+
+    @FXML
+    private AnchorPane toSave;
+
+    @FXML
+    private ImageView backgroundImage;
 
     // ImageView notes called
     @FXML
@@ -5281,33 +5308,66 @@ public class Controller implements Initializable{
             note.setVisible(false);
         }
 
+        // Set title and artist
+        txtTitle.setText(txtFieldTitle.getText());
+        txtArtist.setText(txtFieldArtist.getText());
+
         // Validate input
         String[] inputNotes = txtFieldNotes.getText().split(" ");
         String regExPattern = "(e2|f2|g2|a2|b2|c3|d3|e3|f3|g3|a3|b3|c4|d4|e4|f4|g4|a4|b4|c5|d5|e5|f5|g5)[qhw]";
         String noteLength = "";
         int position = 1;
 
-        for (int i=0; i < inputNotes.length; i++) {
-            if (Objects.equals(inputNotes[i], ".")) {
+        for (String inputNote : inputNotes) {
+            boolean matches = Pattern.matches(regExPattern, inputNote);
+            if (Objects.equals(inputNote, ".")) {
+                // Rest
                 position += 1;
-            }
-            boolean matches = Pattern.matches(regExPattern, inputNotes[i]);
-            if (matches) {
-                if (inputNotes[i].charAt(2) == 'q') {
+            } else if (matches) {
+                if (inputNote.charAt(2) == 'q') {
                     noteLength = "quarter";
                 }
-                if (inputNotes[i].charAt(2) == 'h') {
+                if (inputNote.charAt(2) == 'h') {
                     noteLength = "half";
                 }
-                if (inputNotes[i].charAt(2) == 'w') {
+                if (inputNote.charAt(2) == 'w') {
                     noteLength = "whole";
                 }
                 errorText.setText("");
-                String note = "p" + (position) + "_" + inputNotes[i].substring(0,2) + "_" + noteLength;
+                String note = "p" + (position) + "_" + inputNote.substring(0, 2) + "_" + noteLength;
                 position += 1;
+                // Show selected note
                 noteSheet.get(note).setVisible(true);
             } else {
-                errorText.setText("Error with: \"" + inputNotes[i] + "\". Please enter valid notation, see the help tab for more information.");
+                errorText.setText("Error with: \"" + inputNote + "\". Please enter valid notation, see the help tab for more information.");
+                break;
+            }
+        }
+    }
+
+    @FXML
+    public void saveAsPng() {
+        // Get stage
+        Stage stage = (Stage) fullWindow.getScene().getWindow();
+
+        // Snapshot image and open file chooser
+        backgroundImage.setVisible(true);
+        WritableImage image = toSave.snapshot(new SnapshotParameters(), null);
+        backgroundImage.setVisible(false);
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Image");
+        // Force to png
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Images","*.png");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showSaveDialog(stage);
+
+        // Save file
+        if (file != null) {
+            try {
+                ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
+            } catch (IOException e) {
+                // handle exception
+                System.out.println(e.getMessage());
             }
         }
     }
