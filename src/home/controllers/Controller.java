@@ -5317,30 +5317,33 @@ public class Controller implements Initializable{
         String regExPattern = "(e2|f2|g2|a2|b2|c3|d3|e3|f3|g3|a3|b3|c4|d4|e4|f4|g4|a4|b4|c5|d5|e5|f5|g5)[qhw]";
         String noteLength = "";
         int position = 1;
-
-        for (String inputNote : inputNotes) {
-            boolean matches = Pattern.matches(regExPattern, inputNote);
-            if (Objects.equals(inputNote, ".")) {
-                // Rest
-                position += 1;
-            } else if (matches) {
-                if (inputNote.charAt(2) == 'q') {
-                    noteLength = "quarter";
+        if (inputNotes.length > 24) {
+            errorText.setText("Please only enter 24 notes or less.");
+        } else {
+            for (String inputNote : inputNotes) {
+                boolean matches = Pattern.matches(regExPattern, inputNote);
+                if (Objects.equals(inputNote, ".")) {
+                    // Rest
+                    position += 1;
+                } else if (matches) {
+                    if (inputNote.charAt(2) == 'q') {
+                        noteLength = "quarter";
+                    }
+                    if (inputNote.charAt(2) == 'h') {
+                        noteLength = "half";
+                    }
+                    if (inputNote.charAt(2) == 'w') {
+                        noteLength = "whole";
+                    }
+                    errorText.setText("");
+                    String note = "p" + (position) + "_" + inputNote.substring(0, 2) + "_" + noteLength;
+                    position += 1;
+                    // Show selected note
+                    noteSheet.get(note).setVisible(true);
+                } else {
+                    errorText.setText("Error with: \"" + inputNote + "\". Please enter valid notation, see the help tab for more information.");
+                    break;
                 }
-                if (inputNote.charAt(2) == 'h') {
-                    noteLength = "half";
-                }
-                if (inputNote.charAt(2) == 'w') {
-                    noteLength = "whole";
-                }
-                errorText.setText("");
-                String note = "p" + (position) + "_" + inputNote.substring(0, 2) + "_" + noteLength;
-                position += 1;
-                // Show selected note
-                noteSheet.get(note).setVisible(true);
-            } else {
-                errorText.setText("Error with: \"" + inputNote + "\". Please enter valid notation, see the help tab for more information.");
-                break;
             }
         }
     }
