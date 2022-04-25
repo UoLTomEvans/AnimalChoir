@@ -52,6 +52,21 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <Button fx:id="btnFileInput" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToFileInput" prefHeight="55.0" prefWidth="274.0" stylesheets="@../css/menu-style.css" text="File Input" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/file.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                   <Button fx:id="btnHelp" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#switchToHelp" prefHeight="55.0" prefWidth="274.0" stylesheets="@../css/menu-style.css" text="Help" textFill="WHITE">
                      <padding>
                         <Insets left="50.0" />
@@ -118,7 +133,7 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="textInput" prefHeight="507.0" prefWidth="752.0">
+                  <AnchorPane fx:id="textInput" prefHeight="507.0" prefWidth="752.0" visible="false">
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
@@ -10983,7 +10998,7 @@
                               </AnchorPane>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Pane prefHeight="44.0" prefWidth="968.0" />
+                                    <Pane prefHeight="44.0" prefWidth="944.0" />
                                     <Button fx:id="btnGenerate" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#generateScore" stylesheets="@../css/button-style.css" text="Generate" textFill="WHITE">
                                        <font>
                                           <Font size="20.0" />
@@ -10995,6 +11010,9 @@
                                              </image>
                                           </ImageView>
                                        </graphic>
+                                       <HBox.margin>
+                                          <Insets left="3.0" />
+                                       </HBox.margin>
                                     </Button>
                                     <Button fx:id="btnSave" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#saveAsPng" stylesheets="@../css/button-style.css" text="Save" textFill="WHITE">
                                        <font>
@@ -11017,6 +11035,7 @@
                         </VBox>
                      </children>
                   </AnchorPane>
+                  <AnchorPane fx:id="fileInput" prefHeight="783.0" prefWidth="1212.0" />
                   <AnchorPane fx:id="helpPage" prefHeight="770.0" prefWidth="1213.0" visible="false">
                      <children>
                         <ScrollPane hbarPolicy="NEVER" prefHeight="764.0" prefWidth="978.0" vbarPolicy="ALWAYS">
@@ -11033,7 +11052,7 @@
                                                 <Insets />
                                              </VBox.margin>
                                           </Text>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="In this application, there are &#10;a few ways to work">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="In this application, there are a few bits of notation to know before starting. For each note you will need the name of the note and the length you want&#10;it to last. For example, if we want a middle C, C4, and we want it to be a quarter note, we would input &quot;c4q&quot;. Then for adding more notes, leave a space&#10;between each one. The other piece of notation to know is the space, if you want to leave a space to allow for pauses in the music, us a full stop &quot;.&quot;. This&#10;is primarily used to allow for whole and half notes. Examples of the inputs can be seen below. The maximum amount of notes for this sheet is 24, and&#10;you may also input a title and aritist.">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -11048,7 +11067,7 @@
                                                 <Image url="@../images/all-notes.png" />
                                              </image>
                                           </ImageView>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All possible notes can be seen above shown as quarter notes, however, they can also be written as whole or half notes.&#10;The notes possible range from a e2 to a g5.">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All possible notes can be seen above shown as quarter notes, however, they can also be written as whole or half notes.&#10;The notes possible range from a E2 to a G5.">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
