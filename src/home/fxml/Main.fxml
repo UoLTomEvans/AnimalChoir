@@ -11035,15 +11035,73 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="fileInput" prefHeight="783.0" prefWidth="1212.0">
+                  <AnchorPane fx:id="fileInput" prefHeight="783.0" prefWidth="1212.0" visible="false">
                      <children>
-                        <Button layoutX="189.0" layoutY="231.0" mnemonicParsing="false" onAction="#importMusic" prefHeight="36.0" prefWidth="117.0" stylesheets="@../css/button-style.css" text="Import" textFill="WHITE">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Button>
+                        <VBox prefHeight="567.0" prefWidth="1187.0">
+                           <children>
+                              <Label text="For creating multiple song sheets instantly, you can import a text file here, and all the songs in the file will be saved&#10;as their own sheets.">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="70.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="The format needed is a txt document, with each line being a song.&#10;Each line will look something like this:&#10;Scottish Steps,Gerry Jones,e4q+c3w c4q g4q g4q e4q+c3w c4q d4h . e4q+c3w d4q g4q d4q e4q+c3w e4q e4h . g4q+c3w e4q c4q g4q e4q+c3w d4q e4h .&#10;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="They are arranged as &quot;Song Name,Artist,Notes&quot;, with a comma seperating each value in that order.">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="59.0" prefWidth="1187.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="An example songbook can be found">
+                                       <HBox.margin>
+                                          <Insets left="20.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Hyperlink onAction="#openExampleLink" text="here">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Hyperlink>
+                                 </children>
+                              </HBox>
+                              <Button mnemonicParsing="false" onAction="#importMusic" prefHeight="23.0" prefWidth="115.0" stylesheets="@../css/button-style.css" text="Import" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="900.0" top="30.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/import.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children></AnchorPane>
-                  <AnchorPane fx:id="helpPage" prefHeight="770.0" prefWidth="1213.0" visible="false">
+                  <AnchorPane fx:id="helpPage" prefHeight="784.0" prefWidth="1213.0">
                      <children>
                         <ScrollPane hbarPolicy="NEVER" prefHeight="764.0" prefWidth="978.0" vbarPolicy="ALWAYS">
                           <content>
@@ -11075,6 +11133,16 @@
                                              </image>
                                           </ImageView>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All possible notes can be seen above shown as quarter notes, however, they can also be written as whole or half notes.&#10;The notes possible range from a E2 to a G5.">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="404.0" fitWidth="854.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/chord-example.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Above is an example of chords in Animal Choir. To add a chord simple use a &quot;+&quot; sign inbetween the notes. This can be&#10;done with as many notes as desired.">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
