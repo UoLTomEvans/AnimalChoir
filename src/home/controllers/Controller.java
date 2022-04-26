@@ -5300,7 +5300,7 @@ public class Controller implements Initializable{
     // Songbook link
     @FXML
     public void openExampleLink() throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://www.dogsandbirds.co.uk/how-it-works/"));
+        Desktop.getDesktop().browse(new URI("https://raw.githubusercontent.com/UoLTomEvans/AnimalChoir/master/Songbook.txt"));
     }
 
     // Get music from a file

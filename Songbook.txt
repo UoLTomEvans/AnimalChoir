@@ -1,2 +1,7 @@
 Scottish Steps,Gerry Jones,e4q+c3w c4q g4q g4q e4q+c3w c4q d4h . e4q+c3w d4q g4q d4q e4q+c3w e4q e4h . g4q+c3w e4q c4q g4q e4q+c3w d4q e4h .
 Rainbow Swing,Rhi Swann,e4h+g3w . c4q c4q e4h+g3w . c4q c4q d4q+g3w d4q d4q d4q e4h+g3w . e4h . e4h+g3w . c4q c4q d4q+f3w d4q d4q d4q
+Old MacDonald,,c4q c4q c4q g3q a3q a3q g3h . e4q e4q b4q b4q c4w
+Playground,Peter Ginger,d4q d4q b3q b3q d4q d4q b3h . d4q d4q b3q b3q d4q d4q b3h . d4q d4q b3q b3q d4q d4q b3h .
+By the lake,Becca Henry,d4q d4q d4h . b3q b3q b3h . d4q b3q d4q d4q b3q b3q b3h . d4q b3q d4q d4q b3q b3q b3h .
+Morning Call,Mike Croft,f4w+a3q f3q f3q f3q f4w+c3q f3q f3q f3q a4w+a3q f3q f3q f3q a4w+c3q f3q f3q f3q f4w+a3q f3q f3q f3q f4w+c4q a3q a3q a3q
+God Save The Queen,British National Anthem,f4q f4q g4q e4q f4q g4q a4q a4q b4q a4q g4q f4q g4q f4q e4q f4q
