@@ -11035,7 +11035,14 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="fileInput" prefHeight="783.0" prefWidth="1212.0" />
+                  <AnchorPane fx:id="fileInput" prefHeight="783.0" prefWidth="1212.0">
+                     <children>
+                        <Button layoutX="189.0" layoutY="231.0" mnemonicParsing="false" onAction="#importMusic" prefHeight="36.0" prefWidth="117.0" stylesheets="@../css/button-style.css" text="Import" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
                   <AnchorPane fx:id="helpPage" prefHeight="770.0" prefWidth="1213.0" visible="false">
                      <children>
                         <ScrollPane hbarPolicy="NEVER" prefHeight="764.0" prefWidth="978.0" vbarPolicy="ALWAYS">
