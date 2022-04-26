@@ -5362,8 +5362,7 @@ public class Controller implements Initializable{
                 String noteLength = "";
                 int position = 1;
                 if (inputNotes.length > 24) {
-                    // Handle note length error ==========================================================
-                    errorText.setText("Please only enter 24 notes or less.");
+                    System.out.println("Please only enter 24 notes or less.");
                 } else {
                     for (String inputNote : inputNotes) {
                         // Count notes needed
@@ -5396,8 +5395,7 @@ public class Controller implements Initializable{
                                     // Show selected note
                                     noteSheet.get(note).setVisible(true);
                                 } else {
-                                    // Handle note error ===================================================================================
-                                    errorText.setText("Error with: \"" + chordNote + "\". Please enter valid notation, see the help tab for more information.");
+                                    System.out.println("Error with: \"" + chordNote + "\". Please enter valid notation, see the help tab for more information.");
                                     break;
                                 }
                             }
@@ -5459,7 +5457,7 @@ public class Controller implements Initializable{
                     }
                 }
             } else {
-                // handle element error
+                System.out.println("Not enough elements in line");
             }
         }
         br.close();
